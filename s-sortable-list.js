@@ -113,14 +113,37 @@ class SortableList extends HTMLElement {
 		this.clonePOS(event);
 	}
 
-	onPointerUp(index) {
+	onPointerUp(event, index) {
 		if (!this.dragging) return null;
 
 		const clone = this.shadowRoot.getElementById('s-sortable-list-clone');
 		clone.remove();
 
+		const isTouch = 'ontouchstart' in window;
+
 		this.items.splice(this.dragging.index, 1);
-		this.items.splice(index, 0, this.dragging.item);
+
+		if (isTouch) {
+			const items = Array.from(this.shadowRoot.querySelectorAll('li'));
+
+			let dropIndex = items.length - 1;
+
+			for (let i = 0; i < items.length; i++) {
+				const bounds = items[i].getBoundingClientRect();
+				const yLimit = bounds.top + bounds.height / 2;
+
+				if (event.clientY < yLimit) {
+					dropIndex = i;
+					break;
+				}
+			}
+
+			this.items.splice(dropIndex, 0, this.dragging.item);
+		}
+
+		if (!isTouch) {
+			this.items.splice(index, 0, this.dragging.item);
+		}
 
 		this.dragging = null;
 		this.render();
@@ -159,7 +182,7 @@ class SortableList extends HTMLElement {
 		this.shadowRoot.querySelectorAll('li').forEach((li, index) => {
 			li.addEventListener('pointerdown', (event) => this.onPointerDown(event, index));
 			li.addEventListener('pointermove', (event) => this.onPointerMove(event));
-			li.addEventListener('pointerup', (event) => this.onPointerUp(index));
+			li.addEventListener('pointerup', (event) => this.onPointerUp(event, index));
 		});
 	}
 }

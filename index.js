@@ -6,7 +6,6 @@ window.onload = function () {
 		sortable_list.setAttribute('sorting', event.target.checked)
 	);
 
-	document
-		.getElementById('sortable-list')
-		.addEventListener('change', (event) => console.log(event.detail.items));
+	document.getElementById('sortable-list');
+	//.addEventListener('change', (event) => console.log(event.detail.items));
 };
