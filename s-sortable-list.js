@@ -4,6 +4,7 @@ sheet.replaceSync(`
   ul:has(.active) li { cursor: grabbing;}
   li { touch-action: none; user-select: none; -webkit-user-drag: none; cursor: grab; }
   li.active { opacity: 0; }
+  li + li { margin-top: 0.25rem; }
 
   #s-sortable-list-clone { 
   	position: fixed; 
