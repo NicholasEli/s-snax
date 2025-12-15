@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sort</title>
+		<script src="https://cdn.shopify.com/shopifycloud/polaris.js"></script>
+	</head>
+	<body>
+		<s-section heading="Sortable List">
+			<s-stack gap="small">
+				<s-stack-item>
+					<s-section>
+						<s-grid gridTemplateColumns="1fr" gap="small">
+							<s-grid-item>
+								<s-checkbox id="toggle-sort" label="Toggle Sort" />
+							</s-grid-item>
+						</s-grid>
+					</s-section>
+				</s-stack-item>
+
+				<s-stack-item>
+					<s-sortable-list id="sortable-list" sorting="false">
+						<s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
+						<s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
+						<s-sortable-list-item slot="item">Three</s-sortable-list-item>
+						<s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
+						<s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
+					</s-sortable-list>
+				</s-stack-item>
+			</s-stack>
+		</s-section>
+
+		<script src="./s-sortable-list.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
