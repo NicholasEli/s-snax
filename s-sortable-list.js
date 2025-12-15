@@ -38,7 +38,6 @@ class SortableList extends HTMLElement {
 		super();
 		this.shadow = this.attachShadow({ mode: 'open' });
 		this.shadow.adoptedStyleSheets = [sheet];
-		this.headers = [];
 		this.items = [];
 		this.dragging = null;
 	}
@@ -60,16 +59,6 @@ class SortableList extends HTMLElement {
 		this[attribute] = next;
 
 		this.render();
-	}
-
-	type() {
-		let type = this.getAttribute('type');
-		if (!type) return 'unordered';
-
-		type = type.toLowerCase();
-		if (type !== 'unordered' && type !== 'ordered') return 'unordered';
-
-		return type;
 	}
 
 	clonePOS(event) {
