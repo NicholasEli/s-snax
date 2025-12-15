@@ -30,6 +30,10 @@ Include Polaris before using any components from this repo:
 A drag-and-drop sortable list built with Pointer Events and Shadow DOM.  
 Designed to work reliably across **desktop, mobile, and iOS Safari**.
 
+### Install
+
+[CDN – s-sortable-list.js](https://cdn.jsdelivr.net/gh/NicholasEli/shopify-web-components@main/s-sortable-list.js)
+
 #### Usage
 
     <s-sortable-list id="sortable-list" sorting="false">
