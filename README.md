@@ -50,7 +50,7 @@ The sortable list emits a custom event when sorting is complete:
 
     const list = document.getElementById('sortable-list');
 
-    list.addEventListener('sort-change', (event) => {
+    list.addEventListener('change', (event) => {
       console.log(event.detail.items);
     });
 
