@@ -160,9 +160,9 @@ class SortableList extends HTMLElement {
 			<ul>
 				${this.items
 					.filter((item) => item.id)
-					.map((item) => {
+					.map((item, index) => {
 						return `
-					<li${border ? 'style="border-top: 1px solid rgb(235, 235, 235)"' : ''}>
+					<li${border && index > 0 ? ' style="border-top: 1px solid rgb(235, 235, 235);"' : ''}>
 						<s-grid gridTemplateColumns="${sorting ? 'auto 1fr' : '1fr'}" justifyContent="start">
 							${sorting ? `<s-grid-item><s-icon type="drag-handle"></s-icon></s-grid-item>` : ''}
 							<s-grid-item>${item.textContent}</s-grid-item>
