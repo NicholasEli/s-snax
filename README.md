@@ -1,4 +1,4 @@
-# shopify-web-components
+# s-snax
 
 A collection of **opinionated, production-ready Web Components** that extend Shopify’s official Web Component library.
 
