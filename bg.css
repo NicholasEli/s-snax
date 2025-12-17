@@ -790,6 +790,26 @@
 		1511px 589px var(--light-purple);
 }
 
+.stars-moving.foreground {
+	width: 3rem;
+	height: 3rem;
+	z-index: 5;
+	filter: brightness(0.25);
+	animation: stars 300s linear infinite;
+	box-shadow:
+		1094px 844px var(--light-purple),
+		347px 892px var(--light-purple),
+		1964px 1406px var(--light-purple),
+		368px 500px var(--light-purple),
+		994px 1174px var(--light-purple),
+		224px 987px var(--light-purple),
+		1950px 533px var(--light-purple),
+		895px 351px var(--light-purple),
+		570px 1374px var(--light-purple),
+		350px 968px var(--light-purple),
+		1986px 763px var(--light-purple);
+}
+
 @keyframes stars {
 	from {
 		transform: translateY(0);
