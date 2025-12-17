@@ -1,4 +1,6 @@
-<img width="300" src="https://nicholaseli.github.io/s-snax/assets/logo.png" alt="s-snax" />
+<p align="center">
+  <img width="300" src="https://nicholaseli.github.io/s-snax/assets/logo.png" alt="s-snax" />
+</p>
 
 # s-snax
 
