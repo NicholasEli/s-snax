@@ -17,7 +17,7 @@
 .stars {
 	width: 0.25rem;
 	height: 0.25rem;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -791,11 +791,11 @@
 }
 
 .stars-moving.foreground {
-	width: 3rem;
-	height: 3rem;
-	z-index: 5;
-	filter: brightness(0.25);
+	width: 4rem;
+	height: 4rem;
+	z-index: 8;
 	animation: stars 300s linear infinite;
+	filter: brightness(0.25);
 	box-shadow:
 		1094px 844px var(--light-purple),
 		347px 892px var(--light-purple),
