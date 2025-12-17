@@ -163,6 +163,7 @@ html {
 
 body {
 	position: relative;
+	overflow-x: hidden;
 }
 
 main {
@@ -230,12 +231,14 @@ li {
 #logo {
 	width: auto;
 	height: 60px;
+	filter: drop-shadow(2px 2px 2px var(--light-purple));
 }
 
 #title span {
 	font-family: var(--font-sour-gummy);
 	color: var(--light-yellow);
 	font-size: 40px;
+	filter: drop-shadow(2px 2px 2px var(--light-purple));
 }
 
 #github svg {
@@ -262,5 +265,5 @@ h1 {
 }
 
 #polaris {
-	overflow-x: hidden;
+	overflow-x: auto;
 }

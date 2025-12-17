@@ -49,8 +49,6 @@ class SortableListDemo extends HTMLElement {
 					 <s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
 					 <s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
 					 <s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
-					 <s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
-					 <s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
 					</s-sortable-list>
 
 					<script>
@@ -77,8 +75,6 @@ class SortableListDemo extends HTMLElement {
 									<s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
 									<s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
 									<s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
-									<s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
-									<s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
 								</s-sortable-list>
 							</s-stack-item>
 						</s-stack>

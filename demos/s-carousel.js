@@ -41,8 +41,6 @@ class CarouselDemo extends HTMLElement {
 						 <s-carousel-item slot="item" title="Item 1" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-1_large.png"></s-carousel-item>
 						 <s-carousel-item slot="item" title="Item 2" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-2_large.png"></s-carousel-item>
 						 <s-carousel-item slot="item" title="Item 3" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-3_large.png"></s-carousel-item>
-						 <s-carousel-item slot="item" title="Item 4" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-4_large.png"></s-carousel-item>
-						 <s-carousel-item slot="item" title="Item 5" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png"></s-carousel-item>
 						</s-carousel>
 
 						<script>
@@ -75,18 +73,6 @@ class CarouselDemo extends HTMLElement {
 								title="Item 3"
 								details="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 								image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-3_large.png"
-							>
-							<s-carousel-item
-								slot="item"
-								title="Item 4"
-								details="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-								image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-4_large.png"
-							>
-							<s-carousel-item
-								slot="item"
-								title="Item 5"
-								details="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-								image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png"
 							>
 							</s-carousel-item>
 						</s-carousel>
