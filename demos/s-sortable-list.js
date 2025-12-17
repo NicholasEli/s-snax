@@ -5,6 +5,21 @@ class SortableListDemo extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+
+		setTimeout(() => {
+			const toggle_sort = this.querySelector('#toggle-sort');
+			const sortable_list = this.querySelector('s-sortable-list');
+
+			if (toggle_sort && sortable_list) {
+				toggle_sort.addEventListener('change', (event) =>
+					sortable_list.setAttribute('sorting', event.target.checked)
+				);
+
+				this.querySelector('#sortable-list').addEventListener('change', (event) =>
+					console.log(event.detail.items)
+				);
+			}
+		}, 1000);
 	}
 
 	static get observedAttributes() {
@@ -21,27 +36,44 @@ class SortableListDemo extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-			<s-section heading="Sortable List">
-				<s-stack gap="large">
-					<s-stack-item>
-						<s-grid gridTemplateColumns="1fr" gap="small">
-							<s-grid-item>
-								<s-checkbox id="toggle-sort" label="Toggle Sort" />
-							</s-grid-item>
-						</s-grid>
-					</s-stack-item>
+			<util-toggle title="Sortable List">
+				<div slot="usage">
+					<template>
+					<div>
+					<s-sortable-list id="sortable-list" sorting="false" with-border="true">
+					 <s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
+					</s-sortable-list>
+					</div>
+					</template>
+				</div>
+				<div slot="preview">
+					<s-section heading="Sortable List">
+						<s-stack gap="large">
+							<s-stack-item>
+								<s-grid gridTemplateColumns="1fr" gap="small">
+									<s-grid-item>
+										<s-checkbox id="toggle-sort" label="Toggle Sort" />
+									</s-grid-item>
+								</s-grid>
+							</s-stack-item>
 
-					<s-stack-item>
-						<s-sortable-list id="sortable-list" sorting="false" with-border="true">
-							<s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
-							<s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
-							<s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
-							<s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
-							<s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
-						</s-sortable-list>
-					</s-stack-item>
-				</s-stack>
-			</s-section>
+							<s-stack-item>
+								<s-sortable-list id="sortable-list" sorting="false" with-border="true">
+									<s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
+								</s-sortable-list>
+							</s-stack-item>
+						</s-stack>
+					</s-section>
+				</div>
+			</util-toggle>
 		`;
 	}
 }
