@@ -1,4 +1,4 @@
-<img style="width: 75%; max-width: 320px; margin: 0 auto; display: block;" src="https://nicholaseli.github.io/s-snax/assets/logo.png" alt="s-snax" />
+<img width="300" src="https://nicholaseli.github.io/s-snax/assets/logo.png" alt="s-snax" />
 
 # s-snax
 
