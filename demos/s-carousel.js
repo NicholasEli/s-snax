@@ -21,7 +21,11 @@ class CarouselDemo extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-			<util-toggle title="Carousel">
+			<util-toggle 
+				title="Carousel" 
+				text="Rotating content display with simple previous and next controls"
+				url="https://cdn.jsdelivr.net/gh/NicholasEli/s-snax@main/snax/s-carousel.js"
+			>
 				<div slot="usage">
 					<template>
 						<div>
@@ -33,6 +37,12 @@ class CarouselDemo extends HTMLElement {
 						 <s-carousel-item slot="item" title="Item 4" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-4_large.png"></s-carousel-item>
 						 <s-carousel-item slot="item" title="Item 5" details="Lorem ipsum dolor sit amet, consectetur adipisicing elit." image="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png"></s-carousel-item>
 						</s-carousel>
+
+						<script>
+						 // On change event returns object of visible carousel item {title: '...', details: '...', image: '...'}
+						 const carousel = document.getElementById('carousel');
+						 list.addEventListener('change', (event) => console.log(event.detail.item));
+						</script>
 						</div>
 					</template>
 				</div>

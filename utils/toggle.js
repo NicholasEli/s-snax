@@ -3,14 +3,17 @@ import { highlightElement } from 'https://cdn.jsdelivr.net/gh/speed-highlight/co
 const toggleStyleSheet = new CSSStyleSheet();
 toggleStyleSheet.replaceSync(`
 	.toggle__options { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-	.toggle__options div { display: flex; align-items: center; gap: 1rem; }
-	h3 { font-family: var(--font-sour-gummy); color: var(--light-yellow) }
-	button { padding: 0.25rem 0.5rem; outline: none; border: none; background-color: transparent; 	color: rgba(210.656,243.592,253.344,.7); cursor: pointer; }
-	.toggle__options--usage [name="usage"], .toggle__options--preview [name="preview"] { color: var(--light-yellow); }
-	button:hover { color: var(--dark-yellow) }
+	.toggle__options div { display: flex; align-items: center; }
+	h3 { font-size: 1.25rem; font-family: var(--font-sour-gummy); color: var(--light-yellow) }
+	button { padding: 0.25rem 0.5rem; outline: none; border: none; background-color: transparent; color: var(--light-gray); cursor: pointer; }
+	.toggle__options--usage [name="usage"], .toggle__options--preview [name="preview"] { color: var(--dark-green); }
+	button:hover { color: var(--light-green) }
+	a { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; text-decoration: none; color: var(--light-yellow); font-family: var(--font-sour-gummy);}
+	a svg { width: 1rem; height: 1rem; fill: var(--light-yellow); }
 
 	[class*=shj-lang-]{white-space:pre;color:#112;text-shadow:none;box-sizing:border-box;background:#fff;border-radius:10px;max-width:min(100%,100vw);margin:10px 0;padding:30px 20px;font:18px/24px Consolas,Courier New,Monaco,Andale Mono,Ubuntu Mono,monospace;box-shadow:0 0 5px #0001}.shj-inline{border-radius:5px;margin:0;padding:2px 5px;display:inline-block}[class*=shj-lang-]::selection{background:#bdf5}[class*=shj-lang-] ::selection{background:#bdf5}[class*=shj-lang-]>div{display:flex;overflow:auto}[class*=shj-lang-]>div :last-child{outline:none;flex:1}.shj-numbers{counter-reset:line;padding-left:5px}.shj-numbers div{padding-right:5px}.shj-numbers div:before{color:#999;content:counter(line);opacity:.5;text-align:right;counter-increment:line;margin-right:5px;display:block}.shj-syn-cmnt{font-style:italic}.shj-syn-err,.shj-syn-kwd{color:#e16}.shj-syn-num,.shj-syn-class{color:#f60}.shj-numbers,.shj-syn-cmnt{color:#999}.shj-syn-insert,.shj-syn-str{color:#7d8}.shj-syn-bool{color:#3bf}.shj-syn-type,.shj-syn-oper{color:#5af}.shj-syn-section,.shj-syn-func{color:#84f}.shj-syn-deleted,.shj-syn-var{color:#f44}.shj-oneline{padding:12px 10px}.shj-lang-http.shj-oneline .shj-syn-kwd{color:#fff;background:#25f;border-radius:5px;padding:5px 7px}
 	[class*=shj-lang-]{white-space:pre;color:#112;text-shadow:none;box-sizing:border-box;background:#fff;border-radius:10px;max-width:min(100%,100vw);margin:10px 0;padding:30px 20px;font:18px/24px Consolas,Courier New,Monaco,Andale Mono,Ubuntu Mono,monospace;box-shadow:0 0 5px #0001}.shj-inline{border-radius:5px;margin:0;padding:2px 5px;display:inline-block}[class*=shj-lang-]::selection{background:#bdf5}[class*=shj-lang-] ::selection{background:#bdf5}[class*=shj-lang-]>div{display:flex;overflow:auto}[class*=shj-lang-]>div :last-child{outline:none;flex:1}.shj-numbers{counter-reset:line;padding-left:5px}.shj-numbers div{padding-right:5px}.shj-numbers div:before{color:#999;content:counter(line);opacity:.5;text-align:right;counter-increment:line;margin-right:5px;display:block}.shj-syn-cmnt{font-style:italic}.shj-syn-err,.shj-syn-kwd{color:#e16}.shj-syn-num,.shj-syn-class{color:#f60}.shj-syn-insert,.shj-syn-str{color:#7d8}.shj-syn-bool{color:#3bf}.shj-syn-type,.shj-syn-oper{color:#5af}.shj-syn-section,.shj-syn-func{color:#84f}.shj-syn-deleted,.shj-syn-var{color:#f44}.shj-oneline{padding:12px 10px}.shj-lang-http.shj-oneline .shj-syn-kwd{color:#fff;background:#25f;border-radius:5px;padding:5px 7px}[class*=shj-lang-]{color:#abb2bf;background:#161b22}[class*=shj-lang-]:before{color:#6f9aff}.shj-syn-deleted,.shj-syn-err,.shj-syn-var{color:#e06c75}.shj-syn-section,.shj-syn-oper,.shj-syn-kwd{color:#c678dd}.shj-syn-class{color:#e5c07b}.shj-numbers,.shj-syn-cmnt{color:#76839a}.shj-syn-insert{color:#98c379}.shj-syn-type{color:#56b6c2}.shj-syn-num,.shj-syn-bool{color:#d19a66}.shj-syn-str,.shj-syn-func{color:#61afef}
+
 `);
 
 class Toggle extends HTMLElement {
@@ -71,6 +74,10 @@ class Toggle extends HTMLElement {
         </div>
 				${this.display === 'usage' ? `<div class='shj-lang-html'></div>` : ``}
         ${this.display === 'usage' ? `<slot name="usage"></slot>` : `<slot name="preview"></slot>`}
+        <a href="${this.getAttribute('url')}" title="JSDelivr Install Link" target="_blank">
+        	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.842 2.176a3.746 3.746 0 0 0-5.298 0l-2.116 2.116a3.75 3.75 0 0 0 .01 5.313l.338.337a.751.751 0 0 0 1.057-1.064l-.339-.338a2.25 2.25 0 0 1-.005-3.187l2.116-2.117a2.247 2.247 0 1 1 3.173 3.18l-1.052 1.048a.749.749 0 1 0 1.057 1.063l1.053-1.047a3.745 3.745 0 0 0 .006-5.304m-11.664 11.67a3.75 3.75 0 0 0 5.304 0l2.121-2.122a3.75 3.75 0 0 0 0-5.303l-.362-.362a.749.749 0 1 0-1.06 1.06l.361.363c.88.878.88 2.303 0 3.182l-2.12 2.121a2.25 2.25 0 0 1-3.183-3.182l1.07-1.069a.75.75 0 0 0-1.062-1.06l-1.069 1.068a3.75 3.75 0 0 0 0 5.304"></path></svg>
+        	<span>jsdelivr.com</span>
+        </a>
       </div>
     `;
 

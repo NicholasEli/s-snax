@@ -32,7 +32,7 @@ Designed to work reliably across **desktop, mobile, and iOS Safari**.
 
 ### Install
 
-[CDN – s-sortable-list.js](https://cdn.jsdelivr.net/gh/NicholasEli/shopify-web-components@main/s-sortable-list.js)
+[CDN – s-sortable-list.js](https://cdn.jsdelivr.net/gh/NicholasEli/s-snax@main/snax/s-sortable-list.js)
 
 #### Usage
 
@@ -68,7 +68,7 @@ Classic carousel for changing between media items
 
 ### Install
 
-[CDN – s-carousel.js](https://cdn.jsdelivr.net/gh/NicholasEli/shopify-web-components@main/s-carousel.js)
+[CDN – s-carousel.js](https://cdn.jsdelivr.net/gh/NicholasEli/s-snax@main/snax/s-carousel.js)
 
 #### Usage
 

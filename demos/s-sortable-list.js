@@ -34,7 +34,11 @@ class SortableListDemo extends HTMLElement {
 
 	render() {
 		this.innerHTML = `
-			<util-toggle title="Sortable List">
+			<util-toggle 
+				title="Sortable List" 
+				text="Simple drag and drop list with toggle on and off functionality"
+				url="https://cdn.jsdelivr.net/gh/NicholasEli/s-snax@main/snax/s-sortable-list.js"
+			>
 				<div slot="usage">
 					<template>
 					<div>
@@ -46,6 +50,12 @@ class SortableListDemo extends HTMLElement {
 					 <s-sortable-list-item slot="item" id="four">Four</s-sortable-list-item>
 					 <s-sortable-list-item slot="item" id="five">Five</s-sortable-list-item>
 					</s-sortable-list>
+
+					<script>
+					 // On change event returns array of list item IDs ['one', 'three', 'five', 'two', 'four']
+					 const list = document.getElementById('sortable-list');
+					 list.addEventListener('change', (event) => console.log(event.detail.items));
+					</script>
 					</div>
 					</template>
 				</div>
