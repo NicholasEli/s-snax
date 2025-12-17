@@ -209,6 +209,10 @@ li {
 	margin-bottom: 1rem;
 }
 
+*::selection {
+	background-color: var(--light-purple);
+}
+
 /** Container **/
 .container {
 	width: 100%;
