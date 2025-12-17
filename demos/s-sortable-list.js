@@ -6,20 +6,18 @@ class SortableListDemo extends HTMLElement {
 	connectedCallback() {
 		this.render();
 
-		setTimeout(() => {
-			const toggle_sort = this.querySelector('#toggle-sort');
-			const sortable_list = this.querySelector('s-sortable-list');
+		const toggle_sort = this.querySelector('#toggle-sort');
+		const sortable_list = this.querySelector('s-sortable-list');
 
-			if (toggle_sort && sortable_list) {
-				toggle_sort.addEventListener('change', (event) =>
-					sortable_list.setAttribute('sorting', event.target.checked)
-				);
+		if (toggle_sort && sortable_list) {
+			toggle_sort.addEventListener('change', (event) =>
+				sortable_list.setAttribute('sorting', event.target.checked)
+			);
 
-				this.querySelector('#sortable-list').addEventListener('change', (event) =>
-					console.log(event.detail.items)
-				);
-			}
-		}, 1000);
+			this.querySelector('#sortable-list').addEventListener('change', (event) =>
+				console.log(event.detail.items)
+			);
+		}
 	}
 
 	static get observedAttributes() {
@@ -40,6 +38,7 @@ class SortableListDemo extends HTMLElement {
 				<div slot="usage">
 					<template>
 					<div>
+					<h1>Sortable List</h1>
 					<s-sortable-list id="sortable-list" sorting="false" with-border="true">
 					 <s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
 					 <s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
