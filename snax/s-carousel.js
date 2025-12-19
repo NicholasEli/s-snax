@@ -95,7 +95,6 @@ class Carousel extends HTMLElement {
 		const image = item.getAttribute('image');
 		const accessibilityRole = item.getAttribute('accessibilityRole');
 		const alt = item.getAttribute('alt');
-		console.log(item);
 
 		this.shadow.innerHTML = `
 			<s-section${heading ? ` heading="${this.getAttribute('title')}` : ''}">
