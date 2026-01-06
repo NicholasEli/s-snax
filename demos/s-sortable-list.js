@@ -46,9 +46,9 @@ class SortableListDemo extends HTMLElement {
 					<template>
 					<div>
 					<s-sortable-list id="sortable-list" sorting="false" with-border="true">
-					 <s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
-					 <s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
-					 <s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="one" icon="drag-handle">One</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="two" icon="drag-handle">Two</s-sortable-list-item>
+					 <s-sortable-list-item slot="item" id="three" icon="drag-handle">Three</s-sortable-list-item>
 					</s-sortable-list>
 
 					<script>
@@ -72,9 +72,9 @@ class SortableListDemo extends HTMLElement {
 
 							<s-stack-item>
 								<s-sortable-list id="sortable-list" sorting="false" with-border="true">
-									<s-sortable-list-item slot="item" id="one">One</s-sortable-list-item>
-									<s-sortable-list-item slot="item" id="two">Two</s-sortable-list-item>
-									<s-sortable-list-item slot="item" id="three">Three</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="one" icon="drag-handle">One</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="two" icon="drag-handle">Two</s-sortable-list-item>
+									<s-sortable-list-item slot="item" id="three" icon="drag-handle">Three</s-sortable-list-item>
 								</s-sortable-list>
 							</s-stack-item>
 						</s-stack>
